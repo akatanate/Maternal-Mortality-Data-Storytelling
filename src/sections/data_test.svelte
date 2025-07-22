@@ -16,7 +16,7 @@ const texts = [
   ],
   [
     "This map shows the percentage of women aged 15–44 by race—White women in blue, and Black women in yellow.",
-    "Take note of where the brightest regions appear, and compare them to the previous map."
+    "Take note of where the brightest regions appear, and compare them to the next map."
   ],
   [
     "Here, we see the population density of uninsured women aged 15–44.",
