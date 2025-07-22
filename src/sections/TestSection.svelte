@@ -4,21 +4,17 @@
 </script>
 
 <div class = "nike-text">
-<Scroller layout="left">
+<Scroller layout="right">
     {#snippet sticky()}
-      <h1 class = "nike-text">Sticky Content</h1>
-      <p class = "nike-text">This stays in place while scrolling.</p>
+      <img class="duck-img" src = "tv4.png" alt ="tv">
     {/snippet}
 
     {#snippet scrolly()}
       <ArticleText>
-        <p>This is the first scrollable section of text.</p>
+        <p>At just 32 years old, Olympic Gold Medalist Tori Bowie, passed due to complications with childbirth.</p>
       </ArticleText>
       <ArticleText>
-        <p>This is the second scrollable section of text.</p>
-      </ArticleText>
-      <ArticleText>
-        <p>This is the third scrollable section of text.</p>
+        <p>Her story in one of many - involving otherwise healthy black women.</p>
       </ArticleText>
     {/snippet}
 </Scroller>
@@ -27,7 +23,7 @@
 <style>
     @font-face {
         font-family: 'NikeFont';
-          src: url('/scrollytelling-starter/fonts/NIKE.ttf') format('truetype');
+        src: url('/scrollytelling-starter/fonts/NIKE.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -36,5 +32,10 @@
     .nike-text {
     font-family: 'NikeFont', sans-serif;
     font-size: 2rem;
+    }
+
+        .duck-img {
+        width: 90%;
+        margin: 0px auto;
     }
 </style>

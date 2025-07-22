@@ -1,3 +1,4 @@
+
 <script>
     import Section1Card from "../lib/Section2Card.svelte";
     

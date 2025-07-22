@@ -110,7 +110,7 @@
   .nike-text {
     font-family: 'NikeFont', sans-serif;
     font-size: 2rem;
-    background-image: url('/scrollytelling-starter/news4.jpeg');
+    background-image: url('/Maternal-Mortality-Data-Storytelling/news4.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

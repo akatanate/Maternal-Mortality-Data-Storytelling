@@ -4,12 +4,12 @@
 </script>
 
 <div class="page-container">
-  <img class="background-image" src="/scrollytelling-starter/closing.png" alt="Background" />
+  <img class="background-image" src="/Maternal-Mortality-Data-Storytelling/closing.png" alt="Background" />
 
   <div class="content">
     <Scroller>
       {#snippet sticky()}
-        <!-- sticky part can be empty or removed since background image is fixed -->
+        <!-- leave this or not? -->
       {/snippet}
 
       {#snippet scrolly()}

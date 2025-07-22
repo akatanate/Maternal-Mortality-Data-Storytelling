@@ -14,7 +14,7 @@
         width: 50%;
         border: solid #6b97ef .5px;
         box-shadow: 4px 4px #8aa6df;
-        background-image: url('/scrollytelling-starter/paper.png');
+        background-image: url('/Maternal-Mortality-Data-Storytelling/paper.png');
         background-size: cover;
     }
 

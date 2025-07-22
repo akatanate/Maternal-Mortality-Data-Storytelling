@@ -41,7 +41,7 @@
 <style>
   @font-face {
     font-family: 'NikeFont';
-    src: url('/scrollytelling-starter/fonts/NIKE.ttf') format('truetype');
+    src: url('/Maternal-Mortality-Data-Storytelling/fonts/NIKE.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -53,7 +53,7 @@
   }
 
   .title-card {
-    background-image: url('/scrollytelling-starter/handoff1.png');
+    background-image: url('/Maternal-Mortality-Data-Storytelling/handoff1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

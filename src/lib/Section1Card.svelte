@@ -1,14 +1,45 @@
+<!--
 <script>
     let { title, subtitle } = $props();
 </script>
 
 
-<div class="title-card">
-    <div class="content nike-text">
-        <h1>{title}</h1>
-        <p>{subtitle}</p>
-    </div>
-</div>
+
+
+<h1 class="year-title">
+  <span
+    class="year-text"
+    style="opacity: {1 - scrollProgress}; z-index: 1;"
+  >
+    2016
+  </span>
+
+ <span
+  class="year-text"
+  class:gray={scrollProgress >= 1}
+  style="opacity: {scrollProgress}; z-index: 1;"
+>
+  2023
+</span>
+</h1>
+
+.year-title {
+  position: relative;
+  display: inline-block;
+}
+
+.year-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gray {
+  color: gray;
+}
+
+
 
 <style>
     @font-face {
@@ -74,3 +105,4 @@
         }
     }
 </style>
+-->

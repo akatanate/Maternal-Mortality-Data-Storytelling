@@ -2,11 +2,11 @@
   import BackgroundScroller from '../lib/BackgroundScroller.svelte';
 
   const images = [
-    '/scrollytelling-starter/map1.png',
-    '/scrollytelling-starter/map2.png',
-    '/scrollytelling-starter/map3.png',
-    '/scrollytelling-starter/birth.jpeg',
-    '/scrollytelling-starter/income.png'
+    '/Maternal-Mortality-Data-Storytelling/map1.png',
+    '/Maternal-Mortality-Data-Storytelling/map2.png',
+    '/Maternal-Mortality-Data-Storytelling/map3.png',
+    '/Maternal-Mortality-Data-Storytelling/birth.jpeg',
+    '/Maternal-Mortality-Data-Storytelling/income.png'
   ];
 
 const texts = [

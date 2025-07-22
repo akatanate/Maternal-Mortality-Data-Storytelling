@@ -1,78 +1,115 @@
 <script>
-    let { title, subtitle , sub2, sub3} = $props();
+  import { onMount, onDestroy } from 'svelte';
+
+  export let title;
+  export let subtitle;
+  export let sub2;
+  export let sub3;
+
+  let scrollX = 0;
+  let scrollFraction = 0;
+
+  function handleScroll() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    scrollFraction = docHeight ? scrollTop / docHeight : 0;
+    scrollX = scrollFraction * 2500;  // max 300px shift
+  }
+
+  onMount(() => {
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+  });
+
+  onDestroy(() => {
+    window.removeEventListener('scroll', handleScroll);
+  });
 </script>
 
-
-<div class="title-card">
-    <div class="content nike-text">
-        <h1>{title}</h1>
-        <p>{subtitle}</p>
-        <p>{sub2}</p>
-        <p>{sub3}</p>
-    </div>
+<div class="title-card" style="height: 150vh;">
+  <div class="content nike-text" style="text-align:center;">
+    <h1
+ style="transform: translateX({scrollX}px); transition: transform .1s ease;"
+    >
+      {title}
+    </h1>
+    <p
+      style="transform: translateX({-scrollX}px); transition: transform 0.1s ease;"
+    >
+      {subtitle}
+    </p>
+    <p
+      style="transform: translateX({scrollX}px); transition: transform 0.1s ease;"
+    >
+      {sub2}
+    </p>
+    <p
+      style="transform: translateX({-scrollX}px); transition: transform 0.1s ease;"
+    >
+      {sub3}
+    </p>
+  </div>
 </div>
 
 <style>
-    @font-face {
-        font-family: 'NikeFont';
-          src: url('/scrollytelling-starter/fonts/NIKE.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
+  @font-face {
+    font-family: 'NikeFont';
+    src: url('/Maternal-Mortality-Data-Storytelling/fonts/NIKE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
-    .nike-text {
+  .nike-text {
     font-family: 'NikeFont', sans-serif;
     font-size: 2rem;
-    }
+  }
 
-    .title-card {
-        /*background-color: #007052;*/
-        background-image: url('/scrollytelling-starter/tori3.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-        box-sizing: border-box;
-        /*font-family: "Inter", sans-serif;*/
-    }
+  .title-card {
+    background-image: url('/Maternal-Mortality-Data-Storytelling/tori3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
 
-    .content {
-        /*max-width: 700px;
-        background-color: #034c36;
-        padding: 2rem;
-        border: 6px solid #e3ff00;
-        border-radius: 2rem;
-        box-shadow: 16px 16px #188f70;*/
-    }
+  .title-card {
+    height: 150vh; /* taller for scroll */
+  }
 
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #e3ff00;
+    text-shadow: 1px 1px 0 #007052;
+  }
+
+  p {
+    font-size: 1.8rem;
+    color: #f7f5eb;
+    margin-top: 1rem;
+  }
+
+  h1, p {
+    transition: transform 0.2s ease;
+    will-change: transform;
+    position: relative;
+  }
+
+  @media (max-width: 600px) {
     h1 {
-        font-size: 3rem;
-        margin: 0;
-        color: #e3ff00;
-        text-shadow: 1px 1px 0 #007052;
+      font-size: 2.2rem;
     }
-
     p {
-        font-size: 1.3rem;
-        color: #f7f5eb;
-        margin-top: 1rem;
+      font-size: 1.4rem;
     }
-
-    @media (max-width: 600px) {
-        h1 {
-            font-size: 2.2rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-        }
-    }
+  }
 </style>
+
